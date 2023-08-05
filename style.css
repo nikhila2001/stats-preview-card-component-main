@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&display=swap");
+
+/*|| CSS RESET */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ||COLORS */
+  --MAIN-BG: hsl(233, 47%, 7%);
+  --CARD-BG: hsl(244, 38%, 16%);
+  --SOFT-VOILET: hsl(277, 64%, 61%);
+  --WHITE: hsl(0, 0%, 100%);
+  --MAIN-PARA: hsla(0, 0%, 100%, 0.75);
+  --STAT-HEADINGS: hsla(0, 0%, 100%, 0.6);
+
+  /*|| TYPOGRAPHY */
+
+  --FS: 15px;
+  --FF: "Inter", sans-serif;
+  --FF2: "Lexend Deca", sans-serif;
+}
+body {
+  background-color: var(--MAIN-BG);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--FF);
+  color: white;
+  font-weight: bolder;
+}
+.row {
+  display: flex;
+  width: 60%;
+}
+.col-1 {
+  width: 50%;
+  background-color: var(--CARD-BG);
+  padding: 4rem;
+  border-radius: 8px;
+}
+.title {
+  padding-right: 2rem;
+}
+.title > span {
+  color: var(--SOFT-VOILET);
+}
+.description {
+  margin-top: 2rem;
+  color: var(--MAIN-PARA);
+  line-height: 1.6;
+  font-size: 15px;
+  font-weight: 400;
+  padding-right: 1rem;
+}
+.section-counter {
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.section-counter > h2 {
+  color: white;
+}
+small {
+  color: var(--STAT-HEADINGS);
+  text-transform: uppercase;
+  line-height: 2;
+}
+.col-2 {
+  width: auto;
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+.image-container {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  height: 100%;
+}
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(275, 76%, 56%, 0.331);
+}
+
+@media screen and (max-width: 375px) {
+  .row {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .col-1 {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 400;
+  }
+  .col-2 {
+    width: 100%;
+    height: 14rem;
+  }
+  .title {
+    padding: 0;
+    margin-top: 2rem;
+  }
+  .image-container {
+    height: 100%;
+  }
+  img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .section-counter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin-top: 2.5rem;
+  }
+  .description {
+    margin-top: 1rem;
+    color: var(--MAIN-PARA);
+    line-height: 1.6;
+    font-size: 15px;
+    font-weight: 400;
+    height: auto;
+  }
+}
